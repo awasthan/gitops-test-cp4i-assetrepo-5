@@ -1,0 +1,14 @@
+apiVersion: integration.ibm.com/v1beta1
+kind: AssetRepository
+metadata:
+  name: {{ .Values.ibm-assetrepo-instance.assetrepo.name }}
+spec:
+  license:
+    {{- toYaml .Values.ibm-assetrepo-instance.assetrepo.spec.license | nindent 4 }}
+  replicas: {{ .Values.ibm-assetrepo-instance.assetrepo.spec.replicas }}
+  storage:
+    assetDataVolume:
+      class: {{ .Values.ibm-assetrepo-instance.assetrepo.spec.storage.assetDataVolume.class }}
+    couchVolume:
+      class: {{ .Values.ibm-assetrepo-instance.assetrepo.spec.storage.couchVolume.class }}
+  version: {{ .Values.ibm-assetrepo-instance.assetrepo.spec.version }}
