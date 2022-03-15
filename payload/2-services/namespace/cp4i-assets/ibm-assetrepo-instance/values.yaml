@@ -1,0 +1,14 @@
+ibm-assetrepo-instance:
+  assetrepo:
+    name: assetrepo
+    spec:
+      license:
+        accept: true
+        license: L-RJON-C7QG3S
+      version: "2021.4.1"
+      storage:
+        assetDataVolume:
+          class: "ibmc-file-gold-gid"
+        couchVolume:
+          class: "ibmc-block-gold"
+      replicas: 2   
